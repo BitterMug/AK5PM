@@ -95,8 +95,8 @@ class CurrentFragment : Fragment() {
             kotlin.run {
                 val temp: TextView = requireActivity().findViewById(R.id.temp)
                 val humid: TextView = requireActivity().findViewById(R.id.humid)
-                temp.text = String.format("Temperature: %.2f", request.TEMP)
-                humid.text = String.format("Humidity: %.2f", request.HUMID)
+                temp.text = String.format("Temperature: %.2f°C", request.TEMP)
+                humid.text = String.format("Humidity: %.2f%%", request.HUMID)
             }
         }
     }
