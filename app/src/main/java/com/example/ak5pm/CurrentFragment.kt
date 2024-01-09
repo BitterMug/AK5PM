@@ -37,6 +37,7 @@ class CurrentFragment : Fragment() {
         val editor = sharedPreferences.edit()
 
         val saveButton: Button = requireActivity().findViewById(R.id.save_data)
+        val updateButton: Button = requireActivity().findViewById(R.id.update_data)
         val savedTempData: TextView = requireActivity().findViewById(R.id.saved_temp_data)
         val savedHumidData: TextView = requireActivity().findViewById(R.id.saved_humid_data)
         val saveCustomButton: Button = requireActivity().findViewById(R.id.save_custom_data)
@@ -53,6 +54,10 @@ class CurrentFragment : Fragment() {
             editor.putString("humid", humidity)
 
             editor.apply()
+        }
+
+        updateButton.setOnClickListener{
+            fetchTemperatureData().start()
         }
 
         saveCustomButton.setOnClickListener{

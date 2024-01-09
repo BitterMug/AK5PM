@@ -24,11 +24,11 @@
         android:id="@+id/temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:text="@string/temperature"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/url" />
@@ -53,6 +53,14 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="150dp"
         android:text="@string/save_data" />
+
+    <Button
+        android:id="@+id/update_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="150dp"
+        android:text="@string/update" />
 
     <TextView
         android:id="@+id/save_data_text"
