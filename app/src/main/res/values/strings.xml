@@ -10,4 +10,8 @@
     <string name="saved_data">Saved Data</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save_data">Save data</string>
+    <string name="about">About</string>
+    <string name="input_custom_temperature_data">Input custom temperature data...</string>
+    <string name="input_custom_humidity_data">Input custom humidity data...</string>
 </resources>

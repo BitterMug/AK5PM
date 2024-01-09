@@ -1,17 +1,10 @@
 package com.example.ak5pm
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.example.ak5pm.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.gson.Gson
-import java.io.InputStreamReader
-import java.net.URL
-import javax.net.ssl.HttpsURLConnection
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,8 +23,8 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(CurrentFragment())
                     true
                 }
-                R.id.saved -> {
-                    loadFragment(SavedFragment())
+                R.id.about -> {
+                    loadFragment(AboutFragment())
                     true
                 }
                 else -> {false}

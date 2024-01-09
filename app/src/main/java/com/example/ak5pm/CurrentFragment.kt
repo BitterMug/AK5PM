@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.textfield.TextInputEditText
 import com.google.gson.Gson
 import java.io.InputStreamReader
 import java.net.URL
@@ -25,6 +28,46 @@ class CurrentFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_current, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val sharedPreferences = requireActivity().getSharedPreferences("saved_temp", AppCompatActivity.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        val saveButton: Button = requireActivity().findViewById(R.id.save_data)
+        val savedTempData: TextView = requireActivity().findViewById(R.id.saved_temp_data)
+        val savedHumidData: TextView = requireActivity().findViewById(R.id.saved_humid_data)
+        val saveCustomButton: Button = requireActivity().findViewById(R.id.save_custom_data)
+        val customTempData: TextInputEditText = requireActivity().findViewById(R.id.custom_temp)
+        val customHumidData: TextInputEditText = requireActivity().findViewById(R.id.custom_humid)
+        val temp: TextView = requireActivity().findViewById(R.id.temp)
+        val humid: TextView = requireActivity().findViewById(R.id.humid)
+
+        saveButton.setOnClickListener{
+            val temperature = temp.text.toString()
+            val humidity = humid.text.toString()
+
+            editor.putString("temp", temperature)
+            editor.putString("humid", humidity)
+
+            editor.apply()
+        }
+
+        saveCustomButton.setOnClickListener{
+            val temperature = customTempData.text.toString()
+            val humidity = customHumidData.text.toString()
+
+            editor.putString("temp", temperature)
+            editor.putString("humid", humidity)
+
+            editor.apply()
+        }
+
+        savedTempData.text = sharedPreferences.getString("temp", null)
+        savedHumidData.text = sharedPreferences.getString("humid", null)
+
     }
     @SuppressLint("SetTextI18n")
     private fun fetchTemperatureData(): Thread{
@@ -52,4 +95,5 @@ class CurrentFragment : Fragment() {
             }
         }
     }
+
 }
