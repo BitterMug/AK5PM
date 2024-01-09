@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/current"
+        android:icon="@drawable/baseline_local_fire_department_24"
+        android:title="@string/current_data" />
+
+    <item
+        android:id="@+id/saved"
+        android:icon="@drawable/baseline_account_balance_wallet_24"
+        android:title="@string/saved_data" />
+
+
+</menu>
